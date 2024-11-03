@@ -66,7 +66,7 @@ const skills: Skills = {
 
 const certification: Certificate[] = [
   {
-    title: "AWS Cerfied Developer - Associate",
+    title: "AWS Certified Developer – Associate",
     year: 2022,
     certificateUrl:
       "https://www.credly.com/badges/1969d90a-3ac4-4fa5-a069-783f0101e40f/public_url",
