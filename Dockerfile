@@ -1,4 +1,4 @@
-FROM node:18-slim as build
+FROM node:20-slim as build
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ COPY package*.json .
 RUN npm ci
 COPY . .
 
-FROM node:18-alpine as main
+FROM node:20-alpine as main
 
 ## important when we create local node modules in the container with npm install
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
