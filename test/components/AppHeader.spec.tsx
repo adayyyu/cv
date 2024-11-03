@@ -1,7 +1,7 @@
 import * as React from "react";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { vi } from "vitest";
-import { act } from "react-dom/test-utils";
+import { act } from "react";
 import App from "../../src/App";
 
 describe("<AppHeader/>", () => {
@@ -44,7 +44,7 @@ describe("<AppHeader/>", () => {
       expect(img).toBeFalsy();
 
       act(() => vi.advanceTimersByTime(300));
-      expect(windowSpy).toBeCalledTimes(1);
+      expect(windowSpy).toHaveBeenCalledTimes(1);
     }
   });
 
@@ -67,7 +67,7 @@ describe("<AppHeader/>", () => {
       expect(bars.length).toBe(0);
 
       act(() => vi.advanceTimersByTime(300));
-      expect(windowSpy).toBeCalledTimes(1);
+      expect(windowSpy).toHaveBeenCalledTimes(1);
     }
   });
 });
