@@ -11,7 +11,7 @@ const basicInfo: BasicInfo = {
   email: "adayyy.hk@gmail.com",
   github: "ayuyydev",
   linkedin: "ada-yu-20979865",
-  location: "North Greenwich, London, UK",
+  location: "London, UK",
   visaForUK: false,
 };
 
@@ -23,18 +23,9 @@ const education: Education[] = [
 ];
 
 const skills: Skills = {
-  Frontend: [
-    "React.js",
-    "Nextjs",
-    "Single-Spa",
-    "Redux",
-    "Material-UI",
-    "Bootstrap",
-    "JQuery",
-  ],
   Backend: [
-    "Typescript",
-    "Javascript",
+    "TypeScript",
+    "JavaScript",
     "Node.js",
     "Expressjs",
     "Socket.io",
@@ -45,6 +36,16 @@ const skills: Skills = {
     "Grails/Groovy",
     "Python",
   ],
+  Frontend: [
+    "React.js",
+    "Nextjs",
+    "Single-Spa",
+    "Redux",
+    "Material-UI",
+    "Bootstrap",
+    "JQuery",
+  ],
+  "Cloud Computng": ["AWS", "Docker", "Terraform", "Serverless", "AWS CDK"],
   "Database/Cache": [
     "PostgreSQL",
     "Redis",
@@ -53,7 +54,6 @@ const skills: Skills = {
     "Mongodb",
     "Oracle",
   ],
-  "Cloud Computng": ["AWS", "Docker", "Terraform", "Serverless"],
   Testing: ["Jest", "Junit", "Cypress", "Supertest", "Mocha", "Chai"],
   Others: [
     "Micro-services",
@@ -117,30 +117,48 @@ const myJobExp: JobExprience[] = [
   {
     workDuration: [
       {
+        fromDate: { month: "AUG", year: 2023 },
+        mode: WorkMode.FullTime,
+        title: "Backend Developer",
+      },
+    ],
+    companyName: "INTENT.LY",
+    companyUrl: "https://intent.ly/",
+    location: "London, United Kingdom",
+    descriptions: `* **Led and Enhanced high-traffic backend services** (1,000+ users/min) by migrating from JavaScript to TypeScript using Serverless framework and AWS Lambda, improving performance by 90% and reducing costs.
+* **Consolidated and migrated legacy projects** from JavaScript to TypeScript with Webpack, streamlining bundling and adding Jest unit tests to ensure robust code integrity.
+* **Built backend infrastructure** with Terraform and automated CI/CD pipelines using GitHub Actions, accelerating deployment times by 80%.
+* **Improved React.js frontend applications** by enhancing user features and contributing to faster UI load times.
+* **Monitored and optimised AWS Lambda performance** through regular review and logging, proactively identifying and resolving potential issues.
+* **Mentored a team of 5-6 developers**, optimising code quality and accelerating deployment timelines, resulting in 80% fewer bugs, cleaner code and faster feature releases.
+`,
+  },
+  {
+    workDuration: [
+      {
         fromDate: { month: "MAY", year: 2019 },
         toDate: { month: "MAR", year: 2023 },
         mode: WorkMode.FullTime,
+        title: "Senior Solutions Developer",
+      },
+      {
+        fromDate: { month: "APR", year: 2023 },
+        toDate: { month: "MAY", year: 2023 },
+        mode: WorkMode.PartTime,
         title: "Senior Solutions Developer",
       },
     ],
     companyName: "OTTO INTERNATIONAL LTD",
     companyUrl: "https://ottoint.com/",
     location: "Hong Kong",
-    descriptions: `* designed, developed and led a completely new project called **Virtual Product Platform** using NodeJS/Javascript, ReactJs, Redis hosted on AWS ECS and AWS Cloudfront with auto-scaling which serves around 80 global users daily, providing user a platform to review and manage their 3D development assets and products
-* designed, developed and led for the replacement project called **Access Control Management System (ACM)** using NodeJS/Javascript, ReactJs, Material-UI, Redis hosted on AWS ECS and AWS Cloudfront with auto-scaling, which helps users manage their permissions and roles in different systems. It serves around 200-300 internal users daily
-* designed, developed and led for the replacement project called **Data Maintenance System (DM)** using NodeJS/Javascript, ReactJs, Material-UI, Redis hosted on AWS ECS and AWS Cloudfront with auto-scaling which serves around 50 internal users daily. It is used by internal users to maintain data dynamically used in 3-4 of our existing systems
-* designed, developed and led a completely new project called **Idea Collection** using Java, SpringBoot, AWS API Gateway, AWS ECS, ReactJs serving around 10 users daily, which allows users to review, comment and manage their ideas for product development in the platform
-* suggested, designed and developed a **Customer Help Support System** using NodeJS/Javascript, ReactJs which allows internal user to dynamically update the format of the help forms which facilitates collecting user feedback in a formatted way and creating ticket in our Jira System automatically, serving more than 50 users daily
-* designed and developed **Email sending microservice** using NodeJS / Typescript, AWS Lambda, AWS SQS and AWS SES which serves more than 300 users daily for sending emails with large attachments (more than 100MB)
-* designed and developed **Thumbnail generation microservice** using NodeJS, AWS Lambda with AWS S3 which handles more than 150 images daily
-* designed and developed **Browzwear plugins** using Python and ReactJs which could integrate with the Virtual Product Platform, serving more than 30 customers
-* maintained and developed features on **Product Life Management System** using Redis, Grails/Groovy, GSP and Bootstrap and jQuery, which serves in total 500 users globally, allowing users to manage their product development cycle in the platform including sourcing the materials and how the products are shipped
-* designed and developed POCs using Single-SPA framework to facilitate integration of the Product Life Management with 2-3 customer portals
-* setup CI/CD for deployment on AWS cloud with terraform, Jenkins and Github action for microservices, Node.js backend and ReactJs frontend
-* helped on transitioning 2-3 existing old projects to AWS Cloud using Docker and Terraform
-* analysed requirements from 2-3 Product Managers, written guidelines and distributed tasks to 3-4 colleagues, and follow up with their career development
-* performed regular code review and provide suggestions/improvements to 8-10 colleagues
-* managed and maintained the Github repositories including writing documentations, assigning permissions for the whole team (around 20 developers), and assigning the corresponding code reviewers to the projects`,
+    descriptions: `* **Design and development on multiple projects** (NodeJS, Java, Spring Boot, Grails/Groovy, ReactJS, Bootstrap, jQuery, Material-UI, Redis, AWS ECS, AWS Lambda, S3, Cloudfront, SQS, SES, AWS API Gateway) which serves over 500+ users.
+* **Implemented CI/CD pipelines** on AWS Cloud for Node.js and React.js projects using Terraform, Jenkins, and GitHub Actions, reducing deployment times by 80%.
+* **Transitioned legacy systems** to AWS Cloud with Docker and Terraform, enhancing scalability and cloud adoption.
+* **Managed GitHub repositories** for a 20-member team, overseeing documentation, permissions, and code review assignments, ensuring smooth collaboration.
+* **Mentored 8-10 developers** through regular code reviews and improvement suggestions, promoting code quality and team productivity.
+* **Guided team members’ career development** through ongoing mentorship, performance feedback, and skill-building initiatives, fostering a supportive and growth-oriented environment.
+* **Collaborated closely with Product Managers** to analyse requirements, translate them into actionable development tasks, and distribute these to a team of 3-4 developers, ensuring alignment with project goals.
+`,
   },
   {
     workDuration: [
@@ -154,15 +172,16 @@ const myJobExp: JobExprience[] = [
     companyName: "MOBIGATOR TECHNOLOGY GROUP LTD",
     companyUrl: "https://www.mobigator.com/",
     location: "Hong Kong",
-    descriptions: `* analysed, written guidelines and distributed tasks to 2-3 colleagues, and follow up with their progress
-* implemented automated build and deploy script using batch script for deploying monolithic Java application which is used in production
-* developed and maintained **Hospital Management System** and **Clinic Management System** in Grails/Groovy, SQL, HTML, CSS, Javascript, Ajax and GSP for 5-10 clinic and hospitals which has around 200 users on each instance daily, allowing the hospital/clinic to manage their bookings and patient health records online
-* designed and written schedule jobs for batch tasks including sending notifications to users with email and SMS, and also report generation for 5-10 clinics and hospitals
-* designed, documented and execute test cases manually for each project
-* implemented data migration and check script for each deployment
-* written requirement specification, design specification and work progress reports
-* searched, filtered and exported log records, analysed and written reports concerning the log records
-* communicated with customers to solve customer enquiries`,
+    descriptions: `* **Led task distribution and progress tracking** for a team of 2-3 colleagues, developing guidelines to support consistent project delivery and team alignment.
+* **Automated build and deployment processes** for a production monolithic Java application using batch scripts, reducing manual intervention and enhancing deployment reliability.
+* **Developed and maintained** core Hospital and Clinic Management Systems (Grails/Groovy, SQL, HTML, CSS, JavaScript, Ajax, GSP) used by 5-10 clinics and hospitals with 200 daily users per instance, facilitating seamless online booking and patient health record management.
+* **Created and scheduled** batch jobs to automate notifications via email and SMS, and to generate reports, ensuring timely communication and reporting for 5-10 healthcare institutions.
+* **Documented and executed manual test cases** for each project, ensuring high quality and adherence to requirements.
+* **Developed data migration scripts and validation tools** for each deployment, ensuring data accuracy during system updates.
+* **Produced comprehensive documentation** including requirement specifications, design specifications, and work progress reports, supporting clear project alignment and tracking.
+* **Analysed log data** by searching, filtering, and generating reports, enabling improved troubleshooting and data-driven decision-making.
+* **Provided first-line support** to customers, resolving inquiries and issues to ensure satisfaction and continuity of service.
+`,
   },
   {
     workDuration: [
@@ -182,8 +201,10 @@ const myJobExp: JobExprience[] = [
     companyName: "INSPERA AS",
     companyUrl: "https://www.inspera.com/",
     location: "Norway",
-    descriptions: `* developed and maintained **Assessment Management System** in Java, HTML, CSS, Javascript, JSP, jquery, Ajax and XSL which helps users manage their assessments for their students in more than 50 educational  institutions globally
-* communicated with 10-12 customers to solve customer enquiries in the Jira system which provide users first level system support and solve their issues as promptly as possible`,
+    descriptions: `* **Developed and maintained** a global Assessment Management System (Java, HTML, CSS, JavaScript, JSP, jQuery, Ajax, XSL) used by 50+ educational institutions, enabling efficient assessment management for thousands of students worldwide.
+* **Enhanced user experience** by optimising front-end and back-end components, ensuring smooth operation and scalability for high-volume educational use.
+* **Provided first-line support** to 10-12 institutional clients via the Jira system, promptly resolving inquiries and technical issues to maintain high customer satisfaction and system reliability.
+`,
   },
   {
     workDuration: [
@@ -203,7 +224,7 @@ const myJobExp: JobExprience[] = [
     companyName:
       "THE HONG KONG POLYTECHNIC UNIVERSITY, DEPT OF COMPUTING, ENG236 COMPUTER PROGRAMMING",
     location: "Hong Kong",
-    descriptions: `* assisted in teaching 100 students in programming in C++ and invigilated in mid-term test involving 100 students`,
+    descriptions: `* Assisted in teaching 100 students in programming in C++ and invigilated in mid-term test involving 100 students`,
   },
   {
     workDuration: [
@@ -217,9 +238,9 @@ const myJobExp: JobExprience[] = [
     companyName:
       "THE HONG KONG POLYTECHNIC UNIVERSITY, DEPT OF COMPUTING, COMP - I3LEARN GROUP",
     location: "Hong Kong",
-    descriptions: `* contacted 300 parents concerning information about 6 summer camps related to robotic programming
-* wrote notes and sample programs for 6 summer camps using Robolab and i*CATch toolbox software
-* arranged schedule of 25 student helpers and summarised survey data of 13 summer camps`,
+    descriptions: `* Contacted 300 parents concerning information about 6 summer camps related to robotic programming
+* Wrote notes and sample programs for 6 summer camps using Robolab and i*CATch toolbox software
+* Arranged schedule of 25 student helpers and summarised survey data of 13 summer camps`,
   },
   {
     workDuration: [
@@ -233,7 +254,7 @@ const myJobExp: JobExprience[] = [
     companyName:
       "THE HONG KONG POLYTECHNIC UNIVERSITY, FACULTY OF HEALTH AND SOCIAL SCIENCES, ELDERLY MINI-U PROGRAMME 2010",
     location: "Hong Kong",
-    descriptions: `* prepared notes and taught 40 elderlies for the 5-day advanced computer class`,
+    descriptions: `* Prepared notes and taught 40 elderlies for the 5-day advanced computer class`,
   },
   {
     workDuration: [
@@ -246,8 +267,9 @@ const myJobExp: JobExprience[] = [
     ],
     companyName: "WEB-DESIGNER. LTD",
     location: "Hong Kong",
-    descriptions: `* contacted with 7-8 customers as regular follow up
-* designed logos and websites, uploaded and modified websites according to the needs of more than 10 customers`,
+    descriptions: `* **Maintained regular communication** with 7-8 clients, providing updates and gathering feedback to ensure satisfaction and alignment with project goals.
+* **Designed and customised** logos and website layouts for 10+ clients, adapting each design to meet specific branding and functional requirements.
+* **Uploaded and modified website content** per client specifications, ensuring timely updates and consistent visual quality across projects.`,
   },
 ];
 
