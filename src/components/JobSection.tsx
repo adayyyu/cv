@@ -63,7 +63,9 @@ const WorkDurationText = ({ workDuration }: { workDuration: WorkDuration }) => {
         <IconCalendarEvent size="1.125rem" />
         <Box mx={5}>
           {workDuration.fromDate.month} {workDuration.fromDate.year} to{" "}
-          {workDuration.toDate?.month} {workDuration.toDate?.year}
+          {workDuration.toDate
+            ? workDuration.toDate?.month + " " + workDuration.toDate?.year
+            : "PRESENT"}
         </Box>
         <Badge variant="outline">{workDuration.mode}</Badge>
       </Center>
