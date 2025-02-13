@@ -65,7 +65,7 @@ npm run test
 
 Run with docker.
 ```shell
-docker exec -it ayuyydev-cv npm run test
+docker exec -it adayyyu-cv npm run test
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

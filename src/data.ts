@@ -9,7 +9,7 @@ import { Skills } from "./types/skill.type";
 const basicInfo: BasicInfo = {
   name: "Ada, YU",
   email: "adayyy.hk@gmail.com",
-  github: "ayuyydev",
+  github: "adayyyu",
   linkedin: "ada-yu-20979865",
   location: "London, UK",
   visaForUK: false,

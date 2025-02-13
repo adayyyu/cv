@@ -2,10 +2,10 @@ version: '3.8'
 services:
   cv:
     build: .
-    image: ayuyydev/cv
+    image: cv
     ports:
       - '5173:5173'
-    container_name: ayuyydev-cv
+    container_name: adayyyu-cv
     environment:
       - CHOKDIR_USEPOOLING=true
     volumes:
