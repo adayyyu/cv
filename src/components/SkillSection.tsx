@@ -7,7 +7,7 @@ const SkillSection = () => {
     <Table>
         <tbody>{Object.keys(skills).map((key)=>{
             return <tr key={key}><td>{key}</td><td>{skills[key].map((skill)=>{
-                    return <Badge key={skill} variant="outline" mr={3}>{skill}</Badge>
+                    return <Badge key={skill} variant="outline" mr={3} color="blue.5">{skill}</Badge>
                 })}</td></tr>
         })}</tbody>
     </Table>

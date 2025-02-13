@@ -24,7 +24,7 @@ const AppHeader = () => {
       };
     },[setIsPrinting]);
 
-    return (<Group sx={{ height: '100%' }} px={20} position="apart">
+    return (<Group style={{ height: '100%' }} justify="space-between" px={20}>
             <Text fw={700}>CV - Ada Yu</Text>
             <Center>
             <ActionIcon aria-label="print" variant="default" onClick={onPrintButtonClick} size={30}>

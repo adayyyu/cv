@@ -9,12 +9,12 @@ import SkillSection from './SkillSection';
 
 const Profile = () => {
     return (
-            <Stack spacing="0">
+            <Stack gap="0">
                 <BasicInfoSection/>
                 <Divider mb="sm"/>
                 <Flex mx="md" mb="md" gap="md" direction={{ base: 'column', md: 'row' }} justify={{ sm: 'left' }}>
-                        <JobSection/>
-                        <Container miw={500}><Stack spacing="xs">
+                        {<JobSection/>}
+                        <Container miw={500}><Stack gap="xs">
                             <CertificationSection/>
                             <Divider my="sm" variant="dotted" />
                             <AwardSection/>

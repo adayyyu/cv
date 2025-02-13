@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MantineProvider, ColorSchemeProvider, ColorScheme, AppShell, Header, MantineThemeOverride } from '@mantine/core';
+import { MantineProvider, createTheme, AppShell, virtualColor, colorsTuple } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import Profile from './components/Profile';
 import AppHeader from './components/AppHeader';
@@ -9,31 +9,36 @@ import { PrintContext } from './contexts/print';
 const App = () => {
   return (
       <AppShell
-      fixed
-      header={<Header height={60} p="xs"><AppHeader/></Header>}
+      header={{height:60}}
       styles={{
         main: {
-          paddingTop: "var(--mantine-header-height, 0px)", // remove padding from mantine main component
           paddingBottom: "var(--mantine-footer-height, 0px)",
           paddingLeft: "var(--mantine-navbar-width, 0px)",
           paddingRight: "var(--mantine-aside-width, 0px)"
         },
       }}
       >
-      <Profile/>
+        <AppShell.Header><AppHeader/></AppShell.Header>
+        <AppShell.Main><Profile/></AppShell.Main>
     </AppShell>
   );
 };
 
-const darkTheme: MantineThemeOverride = {
-  colorScheme: 'dark',
-  white:'#000000', // override white to fix the timeline display in dark mode
+const customTheme = createTheme({
+  //white:'#000000', // override white to fix the timeline display in dark mode
   colors:{
-    blue: ['#212529',//'#E7F5FF',
+    customDarkBlue: colorsTuple('#2D4356'),
+    customDarkBlueBg: colorsTuple('#212529'),
+    white: virtualColor({
+      name: 'white',
+      dark: '#000000',
+      light: '#ffffff',
+    }),
+    blue: ['#E7F5FF',
       '#D0EBFF',
       '#A5D8FF',
-      '#74C0FC',
-      '#2D4356',//'#4DABF7',
+      '#4DABF7',
+      '#4DABF7',
       '#339AF0',
       '#228BE6',
       '#1C7ED6',
@@ -41,11 +46,12 @@ const darkTheme: MantineThemeOverride = {
       '#1864AB'
   ]
   }
-};
+});
 
 export default function Main() {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
-  const toggleColorScheme = (value?: ColorScheme) => {
+  const [colorScheme, setColorScheme] = useState<('dark'|'light')>('light');
+
+  const toggleColorScheme = (value?: ('dark'|'light')) => {
     if(value){
       setColorScheme(value);
       localStorage.setItem("mantine-color-scheme", value);
@@ -60,9 +66,9 @@ export default function Main() {
     // do the theme check in useEffect once,
     // since the mantine built in hooks useColorScheme and useLocalStorage cannot seem to work together
     const theme = localStorage.getItem("mantine-color-scheme");
-    if(theme){
+    if(theme && (theme == 'dark' || theme == 'light')){
       // use the theme in local storage as long as it exist
-      toggleColorScheme(theme as ColorScheme);
+      toggleColorScheme(theme);
     }else if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // otherwise check on user preference
       toggleColorScheme('dark');
@@ -75,13 +81,12 @@ export default function Main() {
   useWindowEvent('beforeprint', ()=>setIsPrinting(true));
   useWindowEvent('afterprint', ()=>setIsPrinting(false));
 
+  //<MantineProvider theme={colorScheme=='dark'?darkTheme:DEFAULT_THEME}>
   return (
-    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider theme={colorScheme === 'dark'?darkTheme:{colorScheme}} withGlobalStyles withNormalizeCSS>
+      <MantineProvider theme={customTheme}>
         <PrintContext.Provider value={{isPrinting, setIsPrinting}}>
         <App />
         </PrintContext.Provider>
       </MantineProvider>
-    </ColorSchemeProvider>
   );
 }

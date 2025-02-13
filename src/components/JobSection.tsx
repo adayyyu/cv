@@ -8,6 +8,7 @@ import {
   Title,
   Flex,
   Container,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 import ReactMarkdown from "react-markdown";
@@ -33,6 +34,7 @@ const CompanyName = ({
         size="sm"
         ml={5}
         mr={10}
+        fw={500}
         component="a"
         href={companyLink}
         target="_blank"
@@ -54,22 +56,20 @@ const JobDescriptions = ({ descriptions }: { descriptions: string }) => {
 
 const WorkDurationText = ({ workDuration }: { workDuration: WorkDuration }) => {
   return (
-    <Text size="xs">
+    <Box component="span">
       <Center inline>
         <IconBriefcase size="1.125rem" />
-        <Box mx={5}>
-          <Text size="md">{workDuration.title}</Text>
-        </Box>
+          <Text mx={5} size="md">{workDuration.title}</Text>
         <IconCalendarEvent size="1.125rem" />
-        <Box mx={5}>
+        <Text size="xs" mx={5}>
           {workDuration.fromDate.month} {workDuration.fromDate.year} to{" "}
           {workDuration.toDate
             ? workDuration.toDate?.month + " " + workDuration.toDate?.year
             : "PRESENT"}
-        </Box>
-        <Badge variant="outline">{workDuration.mode}</Badge>
+        </Text>
+        <Badge variant="outline" color="blue.5">{workDuration.mode}</Badge>
       </Center>
-    </Text>
+    </Box>
   );
 };
 
@@ -106,6 +106,7 @@ const JobExprience = ({ data }: { data: JobExprience }) => {
 
 const JobSection = () => {
   const [currentActive, setCurrentActive] = useState(myJobExp.length + 1);
+  const {colorScheme} = useMantineColorScheme();
   return (
     <Box>
       <Title order={3}>Work Experience</Title>
@@ -129,9 +130,8 @@ const JobSection = () => {
               bullet={hovered}
               onMouseOver={onHover}
               onMouseOut={onMouseOut}
-              active={hovered}
               ref={ref}
-              bg={hovered ? "blue.0" : undefined}
+              bg={hovered ? (colorScheme==='dark'?"customDarkBlueBg.9":"blue.0") : undefined}
               key={`${item.companyName}`}
             >
               <JobExprience data={item}></JobExprience>

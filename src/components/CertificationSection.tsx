@@ -19,7 +19,7 @@ const CertificationSection = () => {
                                 {cert.certificateUrl? <><Text fw={500} component='a' href={cert.certificateUrl} target="_blank">{cert.title} ({cert.year})</Text><br/></>:
                                     <Text fw={500}>{cert.title} ({cert.year})</Text>
                                 }
-                                {cert.instituteUrl? <Text c="dimmed" component='a' href={cert.instituteUrl} target="_blank">{cert.institute}</Text>:
+                                {cert.instituteUrl? <Text fw={500} c="dimmed" component='a' href={cert.instituteUrl} target="_blank">{cert.institute}</Text>:
                                     <Text c="dimmed">{cert.institute}</Text>
                                 }
                             </List.Item>

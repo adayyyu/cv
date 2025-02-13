@@ -1,3 +1,11 @@
+.mantine-Timeline-itemBullet:where([data-active='true']){
+  background-color:var(--mantine-color-body);
+}
+
+.mantine-Timeline-itemBullet:where([data-with-child='true']){
+  background-color:var(--tl-color)!important;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
