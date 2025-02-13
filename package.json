@@ -18,7 +18,7 @@
     "@tabler/icons-react": "^3.30.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^8.0.7"
+    "react-markdown": "^9.0.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
