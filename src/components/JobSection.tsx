@@ -56,7 +56,7 @@ const JobDescriptions = ({ descriptions }: { descriptions: string }) => {
 
 const WorkDurationText = ({ workDuration }: { workDuration: WorkDuration }) => {
   return (
-    <Box component="span">
+    <Box component="div">
       <Center inline>
         <IconBriefcase size="1.125rem" />
           <Text mx={5} size="md">{workDuration.title}</Text>
