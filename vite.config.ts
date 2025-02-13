@@ -1,9 +1,9 @@
-import { UserConfig, defineConfig } from "vitest/config";
+import { ViteUserConfig, defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react() as UserConfig["plugins"]],
+  plugins: [react() as ViteUserConfig["plugins"]],
   base: "./",
   server: {
     watch: {
