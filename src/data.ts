@@ -118,6 +118,7 @@ const myJobExp: JobExprience[] = [
     workDuration: [
       {
         fromDate: { month: "AUG", year: 2023 },
+        toDate: { month: "FEB", year: 2025 },
         mode: WorkMode.FullTime,
         title: "Backend Developer",
       },
